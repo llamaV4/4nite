@@ -32,3 +32,26 @@ def check_winner(player):
 
 def check_tie():
     return " " not in board
+def play_game():
+    current_player = "X"
+    print("Welcome to Tic-Tac-Toe!")
+    print_board()
+
+    while True:
+        player_move(current_player)
+        print_board()
+
+        if check_winner(current_player):
+            print(f"Player {current_player} wins! 🎉")
+            break
+
+        if check_tie():
+            print("It's a tie!")
+            break
+
+        if current_player == "X":
+            current_player = "O"
+        else:
+            current_player = "X"
+
+play_game()
